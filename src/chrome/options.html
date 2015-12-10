@@ -10,28 +10,26 @@
             <select id="target"></select>
         </fieldset>
         <fieldset>
-            <legend>Attributes</legend>
+            <legend>Model</legend>
             <div class="left">
                 <ul>
                     <li>
-                        <label for="attributes.letter">Letter Case:</label>
-                        <select id="attributes.letter">
-                            <option value="3">Camel</option>
-                            <option value="2">Lower</option>
-                            <option value="4">Natural</option>
-                            <option value="5">Proper</option>
-                            <option value="6">Upper</option>
-                        </select>
+                        <label for="model.namespace">Namespace:</label>
+                        <input type="text" id="model.namespace" value="">
                     </li>
                     <li>
-                        <label for="attributes.indent">Indent:</label>
-                        <input type="checkbox" id="attributes.indent">
+                        <label for="model.include">Include namespace in filename:</label>
+                        <input type="checkbox" id="model.include">
                     </li>
                 </ul>
             </div>
-            <div class="right valign">
-                <label for="attributes.separator">Separator:</label>
-                <input type="text" id="attributes.separator" value="">
+            <div class="right">
+                <ul>
+                    <li>
+                        <label for="model.target">Destination Page Name:</label>
+                        <input type="text" id="model.target" value="" placeholder="DestinationName (optional)"/>
+                    </li>
+                </ul>
             </div>
         </fieldset>
         <fieldset>
@@ -44,24 +42,6 @@
                 <li>
                     <label for="copyright.year">Year:</label>
                     <input type="number" id="copyright.year" value="">
-                </li>
-            </ul>
-        </fieldset>
-        <fieldset>
-            <legend>Fill</legend>
-            <label for="fill.separator">Separator:</label>
-            <input type="text" id="fill.separator" value="">
-        </fieldset>
-        <fieldset>
-            <legend>Model</legend>
-            <ul>
-                <li>
-                    <label for="model.namespace">Namespace:</label>
-                    <input type="text" id="model.namespace" value="">
-                </li>
-                <li>
-                    <label for="model.include">Include namespace in filename:</label>
-                    <input type="checkbox" id="model.include">
                 </li>
             </ul>
         </fieldset>
@@ -97,6 +77,45 @@
             </div>
         </fieldset>
         <fieldset>
+            <legend>Timeout</legend>
+            <input type="text" id="timeout" value="">
+        </fieldset>
+        <fieldset>
+            <legend>Template (Handlebars.js expression)</legend>
+            <textarea id="template"></textarea>
+        </fieldset>
+        <fieldset>
+            <legend>Attributes</legend>
+            <div class="left">
+                <ul>
+                    <li>
+                        <label for="attributes.letter">Letter Case:</label>
+                        <select id="attributes.letter">
+                            <option value="3">Camel</option>
+                            <option value="2">Lower</option>
+                            <option value="4">Natural</option>
+                            <option value="5">Proper</option>
+                            <option value="6">Upper</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="attributes.indent">Indent:</label>
+                        <input type="checkbox" id="attributes.indent">
+                    </li>
+                </ul>
+            </div>
+            <div class="right valign">
+                <label for="attributes.separator">Separator:</label>
+                <input type="text" id="attributes.separator" value="">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Fill</legend>
+            <label for="fill.separator">Separator:</label>
+            <input type="text" id="fill.separator" value="">
+        </fieldset>
+        <fieldset class="last">
             <legend>Operations</legend>
             <ul>
                 <li>
@@ -137,18 +156,14 @@
                 </li>
             </ul>
         </fieldset>
-        <fieldset>
-            <legend>Timeout</legend>
-            <input type="text" id="timeout" value="">
-        </fieldset>
-        <fieldset>
-            <legend>Template (Handlebars.js expression)</legend>
-            <textarea id="template"></textarea>
-        </fieldset>
+
+
         <div class="preloader"></div>
-        <button class="save"><span class="fa fa-save"></span>Save</button>
-        <button class="restore"><span class="fa fa-undo"></span>Restore To Factory Options</button>
-        <span class="notify"></span>
+        <div class="actions">
+            <button class="save"><span class="fa fa-save"></span>Save</button>
+            <button class="restore"><span class="fa fa-undo"></span>Restore To Factory Options</button>
+            <span class="notify"></span>
+        </div>
         <script src="assets/js/options.js"></script>
     </body>
 </html>

@@ -380,7 +380,7 @@ describe('common.getStorage', function() {
         response.done(function(data) {
             var values = common.setDefaultValues();
             expect(data).toEqual({
-                model: { name: '', target: '' },
+                model: { name: '', target: '', namespace: '' },
                 target: 'java',
                 targets: {
                     cs: { label: 'C#', config: values, template: '{{template}}' },
@@ -423,7 +423,7 @@ describe('common.getStorage', function() {
         response.done(function(data) {
             var values = { timeout: 90 };
             expect(data).toEqual({
-                model: { name: '', target: '' },
+                model: { name: '', target: '', namespace: '' },
                 target: 'java',
                 targets: {
                     cs: { label: 'C#', config: values, template: '{{template}}' },
@@ -466,7 +466,7 @@ describe('common.getStorage', function() {
         response.done(function(data) {
             var values = common.setDefaultValues();
             expect(data).toEqual({
-                model: { name: '', target: '' },
+                model: { name: '', target: '', namespace: '' },
                 target: 'java',
                 targets: {
                     cs: { label: 'C#', config: values, template: '{{cached}}' },
@@ -503,7 +503,7 @@ describe('common.getStorage', function() {
         response.done(function(data) {
             expect(data).toEqual({
                 timestamp: 1,
-                model: { name: '', target: '' },
+                model: { name: '', target: '',namespace: '' },
                 target: 'java',
                 targets: {
                     cs: { label: 'C#' },
@@ -544,7 +544,7 @@ describe('common.getStorage', function() {
         expect(typeof(response.fail)).toEqual('function');
         response.done(function(data) {
             expect(data).toEqual({
-                model: { name: '', target: '' },
+                model: { name: '', target: '', namespace: '' },
                 target: 'java',
                 targets: {
                     cs: { label: 'C#', template: '{{template}}' },
@@ -586,7 +586,7 @@ describe('common.getStorage', function() {
         response.done(function(data) {
             var values = common.setDefaultValues();
             expect(data).toEqual({
-                model: { name: '', target: '' },
+                model: { name: '', target: '', namespace: '' },
                 target: 'java',
                 targets: {
                     cs: { config: values, label: 'C#' },

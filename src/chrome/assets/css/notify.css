@@ -7,6 +7,7 @@
     opacity: 0.9;
     position: absolute;
     z-index: inherit;
+    top:40px;
 }
 .notify .arrow {
     border-bottom: 8px solid #030303;

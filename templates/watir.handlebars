@@ -6,21 +6,45 @@
     */
 
 {{/if}}
-
-
 {{#if model.namespace}}module {{model.namespace}}
 {{/if}}
  class {{model.name}}
   include PageObject
+
+  page_url $brandsite
+
 {{#attributes}}
-    {{#if attribute.strategy}}
-        (:{{attribute.name}}, {{attribute.strategy}}: "{{{attribute.value}}}")
-    {{else}}
-        {{attribute.name}} = "{{{attribute.value}}}";
-    {{/if}}
+{{#equals type 'button'}}
+  button(:{{attribute.name}}, {{attribute.strategy}}: "{{{attribute.value}}}")
+{{/equals}}
+{{#equals type 'checkbox'}}
+  checkbox(:{{attribute.name}}, {{attribute.strategy}}: "{{{attribute.value}}}")
+{{/equals}}
+{{#equals type 'element'}}
+  element(:{{attribute.name}}, {{attribute.strategy}}: "{{{attribute.value}}}")
+{{/equals}}
+{{#equals type 'form'}}
+  form(:{{attribute.name}}, {{attribute.strategy}}: "{{{attribute.value}}}")
+{{/equals}}
+{{#equals type 'image'}}
+  image(:{{attribute.name}}, {{attribute.strategy}}: "{{{attribute.value}}}")
+{{/equals}}
+{{#equals type 'input'}}
+  input(:{{attribute.name}}, {{attribute.strategy}}: "{{{attribute.value}}}")
+{{/equals}}
+{{#equals type 'link'}}
+  link(:{{attribute.name}}, {{attribute.strategy}}: "{{{attribute.value}}}")
+{{/equals}}
+{{#equals type 'option'}}
+  option(:{{attribute.name}}, {{attribute.strategy}}: "{{{attribute.value}}}")
+{{/equals}}
+{{#equals type 'select'}}
+  select_list(:{{attribute.name}}, {{attribute.strategy}}: "{{{attribute.value}}}")
+{{/equals}}
+{{#equals type 'radio'}}
+  radio(:{{attribute.name}}, {{attribute.strategy}}: "{{{attribute.value}}}")
+{{/equals}}
 {{/attributes}}
 
-
-{{#if model.namespace}}end
-{{/if}}
+{{#if model.namespace}}end {{/if}}
 end

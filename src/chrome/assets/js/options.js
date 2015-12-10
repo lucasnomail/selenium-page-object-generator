@@ -14,7 +14,8 @@ function getElements() {
         },
         model: {
             include: $('[id="model.include"]'),
-            namespace: $('[id="model.namespace"]')
+            namespace: $('[id="model.namespace"]'),
+            target: $('[id="model.target"]')
         },
         nodes: {
             angular: $('[id="nodes.angular"]'),
@@ -46,7 +47,6 @@ function loadData(elements) {
     return $.Deferred(function(defer) {
         common.getStorage().always(function(data) {
             var storage = data;
-
             for (var key in storage.targets) {
                 elements.target.append('<option value="' + key + '">' +
                     storage.targets[key].label + '</option>');
@@ -83,6 +83,7 @@ function pull(elements, target) {
         replace(/\\n/g, '\n');
 
     target.config.model.namespace = elements.model.namespace.val();
+    target.config.model.target = elements.model.target.val();
     target.config.model.include = elements.model.include.get(0).checked;
 
     target.config.nodes.angular = elements.nodes.angular.get(0).checked;
@@ -127,6 +128,7 @@ function push(elements, target) {
         replace(/\n/g, '\\n'));
 
     elements.model.namespace.val(target.config.model.namespace);
+    elements.model.target.val(target.config.model.target);
     elements.model.include.get(0).checked = !!target.config.
         model.include;
 
@@ -166,6 +168,10 @@ $(document).ready(function() {
     // Removes failing protocol check. @see: http://stackoverflow.com/a/22152353/1958200
     ga('set', 'checkProtocolTask', null);
     ga('send', 'pageview', '/options.html');
+
+    $('legend').click(function(){
+        $(this).siblings().slideToggle();
+    });
 
     var elements = getElements();
     var preloader = $('.preloader').preloader();

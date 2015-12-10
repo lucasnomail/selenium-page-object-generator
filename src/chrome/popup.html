@@ -6,15 +6,13 @@
     </head>
     <body>
         <header>
-            <img src="assets/icons/icon48.png"/>
             <span>Page Object Generator</span>
         </header>
         <div class="preloader separator"></div>
         <fieldset>
             <legend>Target</legend>
             <select id="target"></select>
-            <button class="generate"><span class="fa fa-download"></span>Generate</button>
-            <a class="downloader"></a>
+            <button class="options"><span class="fa fa-bars"></span>Options</button>
         </fieldset>
         <fieldset>
             <legend>Settings</legend>
@@ -24,12 +22,13 @@
                     <input type="text" id="model.name" value="" placeholder="PageName (no spaces)" />
                 </li>
                 <li>
-                    <label for="model.target">Destination Page Name:</label>
-                    <input type="text" id="model.target" value="" placeholder="DestinationName (optional)"/>
+                    <label for="model.namespace">Namespace:</label>
+                    <input type="text" id="model.namespace" value="" placeholder="Platform (PO folder)">
                 </li>
             </ul>
-            <button class="options"><span class="fa fa-bars"></span>Options</button>
         </fieldset>
+        <a class="downloader"></a>
+        <button class="generate"><span class="fa fa-download"></span>Generate</button>
         <fieldset class="share last">
             <legend>Share</legend>
             <a class="fa fa-envelope" title="Share this extension via email"></a>
@@ -40,6 +39,8 @@
             <a class="fa fa-linkedin" title="Share this extension on LinkedIn"></a>
             <a class="fa fa-star" title="Rate this extension on Chrome Web Store"></a>
         </fieldset>
+        <img id="pologo" src="assets/icons/icon48.png"/>
         <script src="assets/js/popup.js"></script>
+
     </body>
 </html>

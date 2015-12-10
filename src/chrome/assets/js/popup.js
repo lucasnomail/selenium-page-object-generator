@@ -18,7 +18,7 @@ function getElements() {
         downloader: $('a.downloader').get(0),
         model: {
             name: $('[id="model.name"]'),
-            target: $('[id="model.target"]')
+            namespace: $('[id="model.namespace"]')
         },
         target: $('#target')
     };
@@ -75,6 +75,8 @@ $(document).ready(function() {
         e.preventDefault();
         ga('send', 'event', 'options', 'click');
 
+        storage.target = elements.target.val();
+
         if (chrome.runtime.openOptionsPage) {
             chrome.runtime.openOptionsPage(function() {
                 if (chrome.runtime.lastError) {
@@ -100,7 +102,7 @@ $(document).ready(function() {
 
         elements.target.val(storage.target);
         elements.model.name.val(storage.model.name);
-        elements.model.target.val(storage.model.target);
+        elements.model.namespace.val(storage.model.namespace);
 
         // if it's still empty, let's show the reminder
         validate(elements.model.name);
@@ -131,25 +133,26 @@ $(document).ready(function() {
         var overrides = {
             model: {
                 name: elements.model.name.val().replace(/\s+/g, ''),
-                target: elements.model.target.val()
+                namespace: elements.model.namespace.val()
             }
         };
 
         storage.target = elements.target.val();
         storage.model.name = overrides.model.name;
-        storage.model.target = overrides.model.target;
+        storage.model.namespace = overrides.model.namespace;
         storage.timestamp = new Date().valueOf();
 
         chrome.storage.local.set(storage, function() {
             var target = storage.targets[storage.target];
-            overrides.model.include = target.config.model.include;
-            overrides.model.namespace = target.config.model.namespace;
+            //overrides.model.include = target.config.model.include;
+            //overrides.model.namespace = target.config.model.namespace;
             var input = $.extend({}, target.config, overrides);
 
             processActivePage(input).always(function(context) {
                 ga('send', 'event', 'active.page', 'process', context.url);
 
                 var generated = (Handlebars.compile(target.template))(context);
+                if (storage.target == 'watir') storage.target = 'rb';
                 var fileName = context.model.name + '.' + storage.target;
 
                 if (context.model.include) {

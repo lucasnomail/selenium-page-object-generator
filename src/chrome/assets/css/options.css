@@ -88,6 +88,7 @@ fieldset input[type=text] {
 }
 fieldset input[type=text][id='copyright.claimant'],
 fieldset input[type=text][id='model.namespace'],
+fieldset input[type=text][id='model.target'],
 fieldset input[type=text][id='nodes.root'],
 fieldset input[type=text][id='nodes.selector'] {
     width: 280px;
@@ -141,6 +142,16 @@ fieldset textarea {
     height: 300px;
     width: 765px;
 }
+fieldset .last {
+    padding-bottom:20px;
+}
+.actions {
+    position: fixed;
+    width: 100%;
+    margin: 0px;
+    bottom: 0px;
+    background-color: floralwhite;
+}
 .notify {
     font-weight: bold;
     margin-left: 15px;
@@ -149,6 +160,7 @@ fieldset textarea {
     height: 1px;
     margin: -3px 0px 10px 0px;
     width: 787px;
+    padding-top: 20px;
 }
 ul {
     list-style: none;
