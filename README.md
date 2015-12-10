@@ -39,6 +39,28 @@ You will need to install [Node.js](https://nodejs.org/) as a local development d
 $ npm install
 ```
 
+Development On Windows (couple of tips to save some googling)
+-
+
+If you run into problem with VS lib run the install with 
+```bash
+$ npm install --msvs_version=2015
+```
+If you get `npm WARN unmet dependency`
+```bash
+$ rmdir /q /s node_modules
+$ npm clean cache
+```
+If you get endless loop trying to update npm (npm-cli...)
+(the steps above +)
+```bash
+$ npm -g install npm
+```
+If you get `npm ERR! network read ECONNRESET`
+```bash
+$ npm config set registry http://registry.npmjs.org/
+```
+
 Development
 -
 To build the sources into corresponding packages, run:
