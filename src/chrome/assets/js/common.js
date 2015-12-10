@@ -104,7 +104,8 @@ window.common = {
                 storage.targets = storage.targets || {
                     cs: { label: 'C#' },
                     java: { label: 'Java' },
-                    robot: { label: 'Robot Framework' }
+                    robot: { label: 'Robot Framework' },
+                    watir: { label: 'Watir Framework' }
                 };
 
                 // first timer

@@ -1,0 +1,26 @@
+{{#if copyright.claimant}}
+    /*
+    All the code that follow is
+    Copyright (c) {{copyright.year}}, {{copyright.claimant}}. All Rights Reserved.
+    Not for reuse without permission.
+    */
+
+{{/if}}
+
+
+{{#if model.namespace}}module {{model.namespace}}
+{{/if}}
+ class {{model.name}}
+  include PageObject
+{{#attributes}}
+    {{#if attribute.strategy}}
+        (:{{attribute.name}}, {{attribute.strategy}}: "{{{attribute.value}}}")
+    {{else}}
+        {{attribute.name}} = "{{{attribute.value}}}";
+    {{/if}}
+{{/attributes}}
+
+
+{{#if model.namespace}}end
+{{/if}}
+end

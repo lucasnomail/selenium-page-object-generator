@@ -385,7 +385,8 @@ describe('common.getStorage', function() {
                 targets: {
                     cs: { label: 'C#', config: values, template: '{{template}}' },
                     java: { label: 'Java', config: values, template: '{{template}}' },
-                    robot: { label: 'Robot Framework', config: values, template: '{{template}}' }
+                    robot: { label: 'Robot Framework', config: values, template: '{{template}}' },
+                    watir: { label: 'Watir Framework', config: values, template: '{{template}}' }
                 }
             });
         });
@@ -404,7 +405,8 @@ describe('common.getStorage', function() {
             handler({ targets: {
                 cs: { config: { timeout: 90 }, label: 'C#' },
                 java: { config: { timeout: 90 }, label: 'Java' },
-                robot: { config: { timeout: 90 }, label: 'Robot Framework' }
+                robot: { config: { timeout: 90 }, label: 'Robot Framework' },
+                watir: { config: { timeout: 90 }, label: 'Watir Framework' }
             } });
         });
         var response = common.getStorage();
@@ -426,7 +428,8 @@ describe('common.getStorage', function() {
                 targets: {
                     cs: { label: 'C#', config: values, template: '{{template}}' },
                     java: { label: 'Java', config: values, template: '{{template}}' },
-                    robot: { label: 'Robot Framework', config: values, template: '{{template}}' }
+                    robot: { label: 'Robot Framework', config: values, template: '{{template}}' },
+                    watir: { label: 'Watir Framework', config: values, template: '{{template}}' }
                 }
             });
         });
@@ -445,7 +448,8 @@ describe('common.getStorage', function() {
             handler({ targets: {
                 cs: { label: 'C#', template: '{{cached}}' },
                 java: { label: 'Java', template: '{{cached}}' },
-                robot: { label: 'Robot Framework', template: '{{cached}}' }
+                robot: { label: 'Robot Framework', template: '{{cached}}' },
+                watir: { label: 'Watir Framework', template: '{{cached}}' }
             } });
         });
         var response = common.getStorage();
@@ -467,7 +471,8 @@ describe('common.getStorage', function() {
                 targets: {
                     cs: { label: 'C#', config: values, template: '{{cached}}' },
                     java: { label: 'Java', config: values, template: '{{cached}}' },
-                    robot: { label: 'Robot Framework', config: values, template: '{{cached}}' }
+                    robot: { label: 'Robot Framework', config: values, template: '{{cached}}' },
+                    watir: { label: 'Watir Framework', config: values, template: '{{cached}}' }
                 }
             });
         });
@@ -503,7 +508,8 @@ describe('common.getStorage', function() {
                 targets: {
                     cs: { label: 'C#' },
                     java: { label: 'Java' },
-                    robot: { label: 'Robot Framework' }
+                    robot: { label: 'Robot Framework' },
+                    watir: { label: 'Watir Framework' }
                 }
             });
         });
@@ -543,7 +549,8 @@ describe('common.getStorage', function() {
                 targets: {
                     cs: { label: 'C#', template: '{{template}}' },
                     java: { label: 'Java', template: '{{template}}' },
-                    robot: { label: 'Robot Framework', template: '{{template}}' }
+                    robot: { label: 'Robot Framework', template: '{{template}}' },
+                    watir: { label: 'Watir Framework', template: '{{template}}' }
                 }
             });
         });
@@ -584,7 +591,8 @@ describe('common.getStorage', function() {
                 targets: {
                     cs: { config: values, label: 'C#' },
                     java: { config: values, label: 'Java' },
-                    robot: { config: values, label: 'Robot Framework' }
+                    robot: { config: values, label: 'Robot Framework' },
+                    watir: { config: values, label: 'Watir Framework' }
                 }
             });
         });

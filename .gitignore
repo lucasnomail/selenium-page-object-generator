@@ -2,3 +2,5 @@ build
 dist
 lcov
 node_modules
+pogen.iml
+.idea
