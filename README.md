@@ -107,4 +107,4 @@ Licenses and Acknowledgements for Incorporated Software
 
 Screenshot
 -
-![screenshot](/images/screenshot-opera-1.png)
+![screenshot](/images/popup1.png)
